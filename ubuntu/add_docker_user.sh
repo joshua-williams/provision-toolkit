@@ -1,0 +1,1 @@
+useradd -m -s /bin/bash -g docker docker
