@@ -3,8 +3,8 @@ pipeline {
     parameters {
         string(name: "docker_host", trim: true, description: "Docker Hostname or IP")
         string(name: "docker_user",  trim: true, defaultValue: "root", description: "System user of Docker host")
-        string(name: "bucket",  trim: true, description: "S3 Bucket SSH Keys are stored in")
-        string(name: "ssh_key_path",  trim: true, description: "S3 object key for ssh key")
+        string(name: "bucket",  trim: true, defaultValue:"felix-devops", description: "S3 Bucket SSH Keys are stored in")
+        string(name: "ssh_key_path", defaultValue: "ssh-keys/felix/felix", trim: true, description: "S3 object key for ssh key")
     }
     stages {
         stage('Download Dependencies') {
