@@ -7,7 +7,6 @@ pipeline {
     stages {
         stage('Download Dependencies') {
             steps {
-                git branch: "main", url: "https://github.com/joshua-williams/provision-tool-kit.git"
                 withAWS(region:"us-east-1", credentials:'aws-swfx') {
                     s3Download(file:'felix-ssh-key', bucket:'felix-devops', path:'ssh-keys/felix/felix', force:true)
                     s3Download(file:'bitbucket-ssh-key', bucket:'felix-devops', path:'ssh-keys/bitbucket/bitbucket', force:true)
