@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters {
         string(name: "docker_host", trim: true, description: "Docker Hostname or IP")
-        string(name: "docker_user",  trim: true, description: "System user of Docker host")
+        string(name: "docker_user",  trim: true, defaultValue: "root", description: "System user of Docker host")
     }
     stages {
         stage('Download Dependencies') {
