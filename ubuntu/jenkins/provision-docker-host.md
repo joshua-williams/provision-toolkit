@@ -5,8 +5,13 @@ This Jenkins pipeline installs Docker on an Ubuntu instance along with a docker 
 ### Jenkins Plugins
 - [AWS Pipeline Plugin](https://github.com/jenkinsci/pipeline-aws-plugin)
 ### SSH Keys
-SSH keys are stored in AWS S3 bucket.
-This pipeline gets access to that bucket through the AWS credentials stored in Jenkins Credentials.
+To install docker on the host machine, Jenkins will need ssh access to that server.
+
+The ssh key should be stored in AWS S3 bucket.
+This pipeline needs access to that bucket to get access to the Docker host.
+
+
+Add a item to `Jenkins Credentials Store` to store your AWS credentials.
 
 ### Pipeline Setup
 1. Create a Pipeline job and name it `Provision Docker Host`.
@@ -20,7 +25,12 @@ This pipeline gets access to that bucket through the AWS credentials stored in J
 
 The first time the script runs the parameters will be missing and the job will fail.
 Subsequent runs will have the `Build with Parameters` to fill out the Docker host and user.
+
+### Build with Parameters
+- Docker Host: The ubuntu hostname or IP address 
+- Docker User: The system user that will execute Docker on the ubuntu server
+- S3 Bucket: S3 bucket the ssh keys are stored in
+- SSH Key Path: S3 object key to the ssh key
+
 #### TODO
-The bucket name and object keys are hard coded. Need to paramaterize those values
-
-
+Parameterize the AWS Credentials
