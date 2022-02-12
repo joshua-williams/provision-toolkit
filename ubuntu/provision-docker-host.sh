@@ -1,2 +1,2 @@
-source ./install_docker.sh
-source ./add_docker_user.sh
+source $(pwd)/install_docker.sh
+source $(pwd)/add_docker_user.sh
