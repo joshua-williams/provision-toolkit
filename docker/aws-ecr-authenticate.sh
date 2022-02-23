@@ -2,7 +2,7 @@
 
 # Usage: aws-ecr-authenticate accountId region
 aws_account_id=$1
-aws_regionn=$2
+aws_region=$2
 if [ -z $aws_account_id ]; then
   echo "Please enter AWS account id"
   exit 0
