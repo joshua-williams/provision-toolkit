@@ -13,6 +13,4 @@ if [ -z $aws_region ]; then
 fi
 aws_registry_url="${aws_account_id}.dkr.ecr.${aws_region}.amazonaws.com"
 aws_token=$(aws ecr get-login-password --region $aws_region)
-
-docker login --username AWS --password $aws_token
 docker login --username AWS --password $aws_token $aws_registry_url
