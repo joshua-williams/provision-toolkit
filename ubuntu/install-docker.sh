@@ -14,4 +14,4 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt install -y docker-ce
 
 # Create docker user and add to existing docker group that was installed with docker in previous step ^
-useradd -m -s /bin/bash -g docker docker
+#useradd -m -s /bin/bash -g docker docker
