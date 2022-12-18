@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        GIT_SSH_COMMAND = 'ssh -i ~/.ssh/felix git pull'
+        GIT_SSH_COMMAND = 'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/felix'
     }
     stages {
 
