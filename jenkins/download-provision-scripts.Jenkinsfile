@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    environment {
+        GIT_SSH_COMMAND = 'ssh -i ~/.felix git pull'
+    }
     stages {
 
         stage('Download Provision Scripts') {
