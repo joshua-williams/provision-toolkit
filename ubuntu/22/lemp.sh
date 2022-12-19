@@ -11,3 +11,4 @@ apt install mysql-server -y
 apt install php8.1-fpm php-mysql -y
 # add non-root user
 useradd -m -s /bin/bash -G sudo felix
+echo "felix ALL=(ALL:ALL) ALL" > /etc/sudoers.d/felix
