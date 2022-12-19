@@ -10,4 +10,4 @@ apt install mysql-server -y
 # install php 8
 apt install php8.1-fpm php-mysql -y
 # add non-root user
-useradd -m -s /bin/bash felix
+useradd -m -s /bin/bash -G sudo felix
