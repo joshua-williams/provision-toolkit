@@ -13,6 +13,9 @@ apt install php8.1-fpm php-mysql -y
 useradd -m -s /bin/bash -G sudo felix
 # make is so that felix does not have to call sudo for admin commands
 echo "felix ALL=(ALL:ALL) ALL" > /etc/sudoers.d/felix
+# copy ssh key to felix user
+cp ~/.ssh/authorized_keys /home/felix/.ssh
+chown felix:felix /home/felix/.ssh/authorized_keys
 # Create felix mysql user
 mysql -e "CREATE USER 'felix'@'localhost'"
 mysql -e "GRANT ALL ON *.* TO 'felix'@'localhost'"
