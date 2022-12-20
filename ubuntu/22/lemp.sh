@@ -14,7 +14,7 @@ useradd -m -s /bin/bash -G sudo felix
 # make is so that felix does not have to call sudo for admin commands
 echo "felix ALL=(ALL:ALL) ALL" > /etc/sudoers.d/felix
 # Make felix .ssh directory if not exists
-if [[ !-d /home/felix/.ssh ]]; then
+if [[ ! -d /home/felix/.ssh ]]; then
   mkdir /home/felix/.ssh
 fi
 # copy ssh key to felix user
